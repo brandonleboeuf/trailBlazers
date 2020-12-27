@@ -13,12 +13,12 @@ async function getJSON() {
   let today =
     `${now.getFullYear()}` + `${now.getMonth() + 1}` + `${now.getDate()}`;
 
-  // creates an array with all past games removed
+  // creates an new array with all past games removed
   let futureGames = gscd.g.filter(
     (i) => i.gdte.replace(/[^a-zA-Z0-9 ]/g, '') >= today
   );
 
-  // checks to see if it is game day
+  // checks to see if today is game day
   let GAMEDAY = futureGames[0].g === today ? true : false;
 
   // changes display formatting of date
@@ -53,10 +53,10 @@ async function getJSON() {
   }
 
   // evaluates if it is a Blazers home or away game
-  // and saves the broadcast stations
+  // and saves the broadcast stations in an array
 
   function getBroadcast(num) {
-    let broadcastRadio = [];
+    let radio = [];
     let tv = [];
 
     if (futureGames[num].ac === 'Portland') {
@@ -67,7 +67,7 @@ async function getJSON() {
             tv.push(element);
           } else {
             // isolates out all Radio broadcast stations for blazers when they are the HOME team
-            broadcastRadio.push(element);
+            radio.push(element);
           }
         }
       });
@@ -79,21 +79,25 @@ async function getJSON() {
             tv.push(element);
           } else if (element.type === 'radio') {
             // isolates out all Radio broadcast stations for blazers when they are the AWAY team
-            broadcastRadio.push(element);
+            radio.push(element);
           }
         }
       });
     }
     return {
-      broadcastRadio,
+      radio,
       tv,
     };
   }
 
+  // sets each days broadcast stations in a new array
+  // to access, gameDayBroadcast.tv or gameDayBroadcast.radio
   let gameDayBroadcast = getBroadcast(0);
   let nextGameBroadcast1 = getBroadcast(1);
   let nextGameBroadcast2 = getBroadcast(2);
 
+  // renders date/time of next game
+  // if it is game day, it will render "TODAY" instead of future date
   let gameDetails = document.getElementById('gameDetails');
   gameDetails.innerHTML = `
     <p class="date">
@@ -109,23 +113,24 @@ async function getJSON() {
       <p class="gameMedia_tv"> 
         <img src="./styles/tv.svg" style="width: 12px" />
         ${gameDayBroadcast.tv[0].disp}
-        <!-- Use this code instead to show all tv stations -->
+        <!-- Use this code instead to show ALL tv stations -->
         <!-- ${gameDayBroadcast.tv.map((e) => ` ${e.disp}`)} -->
       </p>
       <p>
         <img src="./styles/radio.svg" style="width: 12px" />
-        ${gameDayBroadcast.broadcastRadio.map((e) => ` ${e.disp}`)}
+        ${gameDayBroadcast.radio.map((e) => ` ${e.disp}`)}
       </p>
     </div>
   `;
 
+  // sets home and away team variables to be used to get team logos
+  let homeTeam = [];
+  futureGames.forEach((e) => homeTeam.push(e.h.ta.toLowerCase()));
   let awayTeam = [];
   futureGames.forEach((e) => awayTeam.push(e.v.ta.toLowerCase()));
   console.log(futureGames);
 
-  let homeTeam = [];
-  futureGames.forEach((e) => homeTeam.push(e.h.ta.toLowerCase()));
-
+  // renders matchup
   let matchup = document.getElementById('matchup');
   matchup.innerHTML = `
     <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${awayTeam[0]}.gif" alt="" style="width: 80px;"/>
@@ -133,11 +138,11 @@ async function getJSON() {
     <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${homeTeam[0]}.gif" alt="" style="width: 80px;"/>
   `;
 
-  // sets table data
+  // renders table
   let table = document.getElementById('upcomingGames');
   table.innerHTML = `
   <tr>
-    <td class="table_matchup matchup-header">
+    <td class="matchup-header">
       <div class="table_matchup_div">
         <img
           src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
@@ -145,14 +150,16 @@ async function getJSON() {
           }.gif"
           alt="${futureGames[1].v.tn} team logo"
           style="width: 26px"
-        />${awayTeam[1].toUpperCase()} @
+        />
+        <p>${awayTeam[1].toUpperCase()} @</p>
         <img
           src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
             homeTeam[1]
           }.gif"
           alt="${futureGames[1].h.tn} team logo"
           style="width: 26px"
-        />${homeTeam[1].toUpperCase()} 
+        />
+        <p>${homeTeam[1].toUpperCase()}</p>
       </div>
     </td>
     <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
@@ -162,7 +169,7 @@ async function getJSON() {
     <td>${nextGameBroadcast1.tv[0].disp}</td>
   </tr>
   <tr>
-    <td class="table_matchup matchup-header">
+    <td class="matchup-header">
     <div class="table_matchup_div">
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
@@ -170,14 +177,16 @@ async function getJSON() {
         }.gif"
         alt="${futureGames[2].v.tn} team logo"
         style="width: 26px"
-      />${awayTeam[2].toUpperCase()} @
+      />
+      <p>${awayTeam[2].toUpperCase()} @</p>
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
           homeTeam[2]
         }.gif"
         alt="${futureGames[2].h.tn} team logo"
         style="width: 26px"
-      />${homeTeam[2].toUpperCase()}
+      />
+      <p>${homeTeam[2].toUpperCase()}</p>
     </div>
     </td>
     <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
