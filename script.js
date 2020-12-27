@@ -1,6 +1,6 @@
 async function getJSON() {
   const res = await fetch(
-    `http://data.nba.com/data/v2015/json/mobile_teams/nba/2020/teams/trail_blazers_schedule_02.json`
+    `https://data.nba.com/data/v2015/json/mobile_teams/nba/2020/teams/trail_blazers_schedule_02.json`
   );
 
   const data = await res.json();
