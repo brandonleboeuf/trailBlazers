@@ -154,7 +154,7 @@ tr {
   font-family: 'Helvetica Neue';
   font-size: 0.7em;
   line-height: 15px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 
 /* .table_matchup {

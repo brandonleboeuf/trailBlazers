@@ -136,7 +136,7 @@ async function getJSON() {
   let table = document.getElementById('upcomingGames');
   table.innerHTML = `
   <tr>
-    <td class="table_matchup">
+    <td class="table_matchup matchup-header">
     <div class="table_matchup_div">
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
@@ -151,18 +151,17 @@ async function getJSON() {
         }.gif"
         alt=""
         style="width: 26px"
-      />
-      ${homeTeam[1].toUpperCase()} 
+      />${homeTeam[1].toUpperCase()} 
     </div>
     </td>
     <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
       timeStyle: 'short',
     })}</td>
-    <td > ${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
+    <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
     <td>${nextGameBroadcast1.tv[0].disp}</td>
   </tr>
   <tr>
-    <td class="table_matchup">
+    <td class="table_matchup matchup-header">
     <div class="table_matchup_div">
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
@@ -177,14 +176,13 @@ async function getJSON() {
         }.gif"
         alt=""
         style="width: 26px"
-      />
-      ${homeTeam[2].toUpperCase()}
+      />${homeTeam[2].toUpperCase()}
     </div>
     </td>
     <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
       timeStyle: 'short',
     })}</td>
-    <td> ${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
+    <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
     <td>${nextGameBroadcast2.tv[0].disp}</td>
   </tr>
   `;
