@@ -1,0 +1,196 @@
+@font-face {
+  font-family: 'UnitedSansCdLt';
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdLt.eot');
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdLt.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdLt.woff')
+      format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'UnitedSansCdBd';
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdBd.eot');
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdBd.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdBd.woff')
+      format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'UnitedSansCdHv';
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdHv.eot');
+  src: url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdHv.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://www.nba.com/resources/static/team/v2/blazers/fonts/united/UnitedSansCdHv.woff')
+      format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+/* body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+} */
+
+.unitedText {
+  font-family: 'UnitedSansCdBd', franklin-gothic-urw;
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-top: 12px;
+}
+
+body {
+  max-width: 371px;
+  height: 480px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+main {
+  max-width: 331px;
+  max-height: fit-content;
+  margin: 0 auto;
+  background-color: white;
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+header,
+#middle {
+  padding: 12px;
+}
+
+table {
+  width: 100%;
+}
+
+h1,
+.team1,
+.team2 {
+  font-family: 'UnitedSansCdHv', franklin-gothic-urw;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+}
+.date {
+  font-family: 'UnitedSansCdLt', franklin-gothic-urw;
+  text-rendering: optimizeLegibility;
+  font-weight: normal;
+  font-size: 1em;
+  margin: 12px auto;
+}
+.gameMedia {
+  margin-right: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-family: 'UnitedSansCdLt', franklin-gothic-urw;
+  font-size: 0.8em;
+  margin-bottom: 30px;
+}
+
+.gameMedia img {
+  margin-right: 3px;
+}
+
+.gameMedia_tv {
+  margin-right: 10px;
+}
+
+.matchup_container {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Helvetica Neue';
+  font-size: 22px;
+  align-items: center;
+  width: 100%;
+}
+
+.ctaBtn {
+  width: 130px;
+  height: 36px;
+  color: #fffdfd;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1em;
+  margin: 30px auto 40px auto;
+  background: #cc0000;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  transition: all 0.2s linear;
+}
+
+.ctaBtn:hover {
+  cursor: pointer;
+  color: #676767;
+  background-color: #d4d4d4;
+  text-decoration: underline;
+}
+
+tr {
+  font-family: 'Helvetica Neue';
+  font-size: 0.7em;
+  line-height: 15px;
+  padding: 0 20px;
+}
+
+/* .table_matchup {
+  width: 140px;
+  padding-right: 0 !important;
+} */
+
+.table {
+  margin-bottom: 0;
+}
+.table > tbody > tr > td {
+  margin: auto;
+}
+
+.table > thead > tr > th {
+  border-bottom: none;
+  padding: 8px 3px;
+  font-size: 1em;
+}
+table {
+  border-top: 2px solid #e3e3e3;
+  padding: 0;
+}
+
+.table > tbody > tr > td {
+  padding: 13px 3px;
+  font-weight: 300;
+  line-height: 1.42857143;
+  vertical-align: middle;
+  border-top: 2px solid #ddd;
+}
+
+.table_matchup_div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-left: 3px; */
+}
+
+.matchup-header,
+.table-time-slot {
+  padding-left: 12px !important;
+  padding-right: 0 !important;
+}
+
+.table-time-slot {
+  padding-left: 25px !important;
+}
