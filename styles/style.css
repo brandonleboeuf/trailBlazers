@@ -201,9 +201,9 @@ table {
 }
 
 @media (max-width: 350px) {
-  .table_matchup_div {
+  /* .table_matchup_div {
     flex-direction: column;
-  }
+  } */
   .table-time-slot {
     padding-left: 0 !important;
   }
