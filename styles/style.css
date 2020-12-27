@@ -200,6 +200,9 @@ table {
   padding-left: 12px !important;
   padding-right: 0 !important;
 }
+.matchup-header {
+  padding-right: 5px !important;
+}
 
 .table-time-slot {
   padding-left: 25px !important;
