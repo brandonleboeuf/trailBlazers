@@ -121,6 +121,7 @@ async function getJSON() {
 
   let awayTeam = [];
   futureGames.forEach((e) => awayTeam.push(e.v.ta.toLowerCase()));
+  console.log(futureGames);
 
   let homeTeam = [];
   futureGames.forEach((e) => homeTeam.push(e.h.ta.toLowerCase()));
@@ -137,22 +138,22 @@ async function getJSON() {
   table.innerHTML = `
   <tr>
     <td class="table_matchup matchup-header">
-    <div class="table_matchup_div">
-      <img
-        src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-          awayTeam[1]
-        }.gif"
-        alt=""
-        style="width: 26px"
-      />${awayTeam[1].toUpperCase()} @
-      <img
-        src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-          homeTeam[1]
-        }.gif"
-        alt=""
-        style="width: 26px"
-      />${homeTeam[1].toUpperCase()} 
-    </div>
+      <div class="table_matchup_div">
+        <img
+          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+            awayTeam[1]
+          }.gif"
+          alt="${futureGames[1].v.tn} team logo"
+          style="width: 26px"
+        />${awayTeam[1].toUpperCase()} @
+        <img
+          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+            homeTeam[1]
+          }.gif"
+          alt="${futureGames[1].h.tn} team logo"
+          style="width: 26px"
+        />${homeTeam[1].toUpperCase()} 
+      </div>
     </td>
     <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
       timeStyle: 'short',
@@ -167,14 +168,14 @@ async function getJSON() {
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
           awayTeam[2]
         }.gif"
-        alt=""
+        alt="${futureGames[2].v.tn} team logo"
         style="width: 26px"
       />${awayTeam[2].toUpperCase()} @
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
           homeTeam[2]
         }.gif"
-        alt=""
+        alt="${futureGames[2].h.tn} team logo"
         style="width: 26px"
       />${homeTeam[2].toUpperCase()}
     </div>
