@@ -49,13 +49,14 @@ body {
   margin: 0 auto;
   background-color: #f5f5f5;
   border-radius: 5px;
-  padding: 20px;
+  /* padding: 20px; */
   padding-bottom: 0;
 }
 main {
   /* max-width: 331px; */
   max-height: fit-content;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin: 15px;
   background-color: white;
   background: #ffffff;
   border: 1px solid #e3e3e3;
