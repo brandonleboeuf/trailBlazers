@@ -210,6 +210,6 @@ table {
     flex-direction: column;
   } */
   .table-time-slot {
-    padding-left: 0 !important;
+    padding-left: 5px !important;
   }
 }

@@ -144,8 +144,7 @@ async function getJSON() {
         }.gif"
         alt=""
         style="width: 26px"
-      />
-      ${awayTeam[1].toUpperCase()} @
+      />${awayTeam[1].toUpperCase()} @
       <img
         src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
           homeTeam[1]
