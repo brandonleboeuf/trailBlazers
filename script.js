@@ -20,8 +20,12 @@ async function getJSON() {
   );
 
   // checks to see if today is game day
-  let GAMEDAY = futureGames[0].g === today ? true : false;
+  let GAMEDAY =
+    futureGames[0].gdte.replace(/[^a-zA-Z0-9 ]/g, '') === today ? true : false;
 
+  console.log(today);
+  console.log('futureGames', futureGames[0].gdte);
+  console.log('gameday', GAMEDAY);
   // changes display formatting of date
   let gameDay = new Date(futureGames[0].htm);
   let nextGame_1 = new Date(futureGames[1].htm);
@@ -130,7 +134,6 @@ async function getJSON() {
   futureGames.forEach((e) => homeTeam.push(e.h.ta.toLowerCase()));
   let awayTeam = [];
   futureGames.forEach((e) => awayTeam.push(e.v.ta.toLowerCase()));
-  console.log(futureGames);
 
   // renders matchup
   let matchup = document.getElementById('matchup');
