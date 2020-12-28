@@ -225,8 +225,15 @@ tr {
     padding-left: 5px !important;
   }
 }
+
 .clickable:hover {
   cursor: pointer;
   background-color: rgba(128, 128, 128, 0.2);
   color: black;
+}
+
+.clickable:focus {
+  border: none;
+  text-decoration: none;
+  outline: none;
 }

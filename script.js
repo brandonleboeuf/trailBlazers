@@ -19,13 +19,11 @@ async function getJSON() {
     (i) => i.gdte.replace(/[^a-zA-Z0-9 ]/g, '') >= today
   );
 
-  // checks to see if today is game day
+  // compares first game in the futureGames array with todays date
+  // to determine if it is GAMEDAY
   let GAMEDAY =
     futureGames[0].gdte.replace(/[^a-zA-Z0-9 ]/g, '') === today ? true : false;
 
-  console.log(today);
-  console.log('futureGames', futureGames[0].gdte);
-  console.log('gameday', GAMEDAY);
   // changes display formatting of date
   let gameDay = new Date(futureGames[0].htm);
   let nextGame_1 = new Date(futureGames[1].htm);
@@ -109,7 +107,8 @@ async function getJSON() {
      ${
        GAMEDAY
          ? `<strong>TODAY</strong> / ${gameDay.toLocaleTimeString([], {
-             timeStyle: 'short',
+             hour: '2-digit',
+             minute: '2-digit',
            })} @ ${futureGames[0].an}`
          : gameDayDate
      }
@@ -168,7 +167,8 @@ async function getJSON() {
       </div>
     </td>
     <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
-      timeStyle: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
     })}</td>
     <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
     <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
@@ -195,7 +195,8 @@ async function getJSON() {
       </div>
     </td>
     <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
-      timeStyle: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
     })}</td>
     <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
     <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
