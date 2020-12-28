@@ -19,7 +19,7 @@ async function getJSON() {
   );
 
   // checks to see if today is game day
-  let GAMEDAY = futureGames[0].g === today ? true : false;
+  let GAMEDAY = futureGames[0].g === today ? false : true;
 
   // changes display formatting of date
   let gameDay = new Date(futureGames[0].htm);
@@ -103,9 +103,9 @@ async function getJSON() {
     <p class="date">
      ${
        GAMEDAY
-         ? `TODAY @ ${gameDay.toLocaleTimeString([], {
+         ? `TODAY / ${gameDay.toLocaleTimeString([], {
              timeStyle: 'short',
-           })}`
+           })} @ ${futureGames[0].an}`
          : gameDayDate
      }
     </p>

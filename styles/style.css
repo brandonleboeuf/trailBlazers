@@ -127,7 +127,7 @@ h1,
   margin: 30px auto 40px auto;
   background: #cc0000;
   border: none;
-  box-shadow: 1px 4px 4px rgba(167, 165, 165, 0.2);
+  /* box-shadow: 1px 4px 4px rgba(167, 165, 165, 0.2); */
   outline: none;
   transition: all 0.2s linear;
 }
@@ -152,7 +152,7 @@ h1,
 .ctaBtn:hover {
   cursor: pointer;
   background-color: #a50000;
-  box-shadow: 2px 5px 4px rgba(167, 165, 165, 0.4);
+  /* box-shadow: 2px 5px 4px rgba(167, 165, 165, 0.4); */
 }
 
 table {
