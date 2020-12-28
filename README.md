@@ -4,7 +4,7 @@
 
 This widget was built to address.
 
-- [Link to Build](https://trailblazers.netlify.app/).
+- [Link to Project Page](https://trailblazers.netlify.app/).
 
 ## Quick Overview
 
@@ -19,13 +19,14 @@ This widget displays the next upcoming three Trail Blazers games.
 ### Image Examples
 
 <p float="left">
-  Gameday Away
+  <div>
+  Away game on gameday
   <img src="/styles/img/gameDay_Away.png" width="30%" />
-  Future Home Game
+  </div>
   <img src="/styles/img/futureGame_Home.png" width="30%" /> 
-  Future Away Game
   <img src="/styles/img/futureGame_Away.png" width="30%" />
-  Full Page context
+</p>
+<p float="center">
   <img src="/styles/img/desktop_context.png" width="100%" />
 </p>
 
