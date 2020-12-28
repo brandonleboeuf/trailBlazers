@@ -194,7 +194,7 @@ async function getJSON() {
         <p>${homeTeam[2].toUpperCase()}</p>
       </div>
     </td>
-    <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
+    <td class="table-time-slot"> ${nextGame_2.toTimeString([], {
       hour: '2-digit',
       minute: '2-digit',
     })}</td>
