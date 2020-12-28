@@ -107,8 +107,7 @@ async function getJSON() {
      ${
        GAMEDAY
          ? `<strong>TODAY</strong> / ${gameDay.toLocaleTimeString([], {
-             hour: '2-digit',
-             minute: '2-digit',
+             timeStyle: 'short',
            })} @ ${futureGames[0].an}`
          : gameDayDate
      }
@@ -167,8 +166,7 @@ async function getJSON() {
       </div>
     </td>
     <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
+      timeStyle: 'short',
     })}</td>
     <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
     <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
@@ -195,8 +193,7 @@ async function getJSON() {
       </div>
     </td>
     <td class="table-time-slot"> ${nextGame_2.toTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit',
+      timeStyle: 'short',
     })}</td>
     <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
     <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
