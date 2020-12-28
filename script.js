@@ -7,6 +7,7 @@ async function getJSON() {
 
   // destructors gscd out of initial JSON response object
   let { gscd } = data;
+  console.log(gscd);
 
   // gets current date and reformats it
   let now = new Date();
@@ -19,7 +20,7 @@ async function getJSON() {
   );
 
   // checks to see if today is game day
-  let GAMEDAY = futureGames[0].g === today ? false : true;
+  let GAMEDAY = futureGames[0].g === today ? true : false;
 
   // changes display formatting of date
   let gameDay = new Date(futureGames[0].htm);
@@ -103,18 +104,19 @@ async function getJSON() {
     <p class="date">
      ${
        GAMEDAY
-         ? `TODAY / ${gameDay.toLocaleTimeString([], {
+         ? `<strong>TODAY</strong> / ${gameDay.toLocaleTimeString([], {
              timeStyle: 'short',
            })} @ ${futureGames[0].an}`
          : gameDayDate
      }
     </p>
+    <p class="date">${futureGames[0].ac}, ${futureGames[0].as}</p>
     <div class="gameMedia">
       <p class="gameMedia_tv"> 
         <img src="./styles/tv.svg" style="width: 12px" />
-        ${gameDayBroadcast.tv[0].disp}
-        <!-- Use this code instead to show ALL tv stations -->
-        <!-- ${gameDayBroadcast.tv.map((e) => ` ${e.disp}`)} -->
+        ${gameDayBroadcast.tv.map((e) => ` ${e.disp}`)} 
+        <!-- Use this code instead to show ONE tv station -->
+        <!-- ${gameDayBroadcast.tv[0].disp}-->
       </p>
       <p>
         <img src="./styles/radio.svg" style="width: 12px" />
@@ -133,15 +135,15 @@ async function getJSON() {
   // renders matchup
   let matchup = document.getElementById('matchup');
   matchup.innerHTML = `
-    <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${awayTeam[0]}.gif" alt="" style="width: 80px;"/>
-    <p> @ </p>
-    <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${homeTeam[0]}.gif" alt="" style="width: 80px;"/>
+  <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${awayTeam[0]}.gif" alt="" style="width: 80px;"/>
+  <p> @ </p>
+  <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${homeTeam[0]}.gif" alt="" style="width: 80px;"/>
   `;
 
   // renders table
   let table = document.getElementById('upcomingGames');
   table.innerHTML = `
-  <tr>
+  <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" onkeydown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
     <td class="matchup-header">
       <div class="table_matchup_div">
         <img
@@ -168,26 +170,26 @@ async function getJSON() {
     <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
     <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
   </tr>
-  <tr>
+  <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
     <td class="matchup-header">
-    <div class="table_matchup_div">
-      <img
-        src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-          awayTeam[2]
-        }.gif"
-        alt="${futureGames[2].v.tn} team logo"
-        style="width: 26px"
-      />
-      <p>${awayTeam[2].toUpperCase()} @</p>
-      <img
-        src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-          homeTeam[2]
-        }.gif"
-        alt="${futureGames[2].h.tn} team logo"
-        style="width: 26px"
-      />
-      <p>${homeTeam[2].toUpperCase()}</p>
-    </div>
+      <div class="table_matchup_div">
+        <img
+          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+            awayTeam[2]
+          }.gif"
+          alt="${futureGames[2].v.tn} team logo"
+          style="width: 26px"
+        />
+        <p>${awayTeam[2].toUpperCase()} @</p>
+        <img
+          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+            homeTeam[2]
+          }.gif"
+          alt="${futureGames[2].h.tn} team logo"
+          style="width: 26px"
+        />
+        <p>${homeTeam[2].toUpperCase()}</p>
+      </div>
     </td>
     <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
       timeStyle: 'short',

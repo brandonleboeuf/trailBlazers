@@ -110,15 +110,6 @@ h1,
   margin-right: 10px;
 }
 
-.matchup_container {
-  display: flex;
-  justify-content: space-evenly;
-  font-family: 'Helvetica Neue';
-  font-size: 22px;
-  align-items: center;
-  width: 100%;
-}
-
 .ctaBtn {
   width: 130px;
   height: 36px;
@@ -206,6 +197,17 @@ tr {
   padding-left: 12px !important;
   padding-right: 0 !important;
 }
+
+.matchup_container {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Helvetica Neue';
+  font-size: 22px;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
 .matchup-header {
   padding-right: 5px !important;
 }
@@ -222,4 +224,9 @@ tr {
   .table-time-slot {
     padding-left: 5px !important;
   }
+}
+.clickable:hover {
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.2);
+  color: black;
 }
