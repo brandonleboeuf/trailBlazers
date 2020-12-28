@@ -19,7 +19,7 @@ This widget displays the next upcoming three Trail Blazers games.
 ### Image Examples
 
 <p float="left">
-  <div>
+  <div float="left">
   Away game on gameday
   <img src="/styles/img/gameDay_Away.png" width="30%" />
   </div>
