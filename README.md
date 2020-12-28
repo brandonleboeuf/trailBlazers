@@ -15,6 +15,7 @@ Run locally with "npx serve"
 
 To implement, add this code just above the <div class="panel-pane pane-custom pane-2"> on the right rail on https://www.nba.com/blazers/forward-center
 
+```
 <div class="panel-pane pane-custom pane-1">
   <div class="pane-content">
     <div class="center-block well">
@@ -30,3 +31,4 @@ To implement, add this code just above the <div class="panel-pane pane-custom pa
     </div>
   </div>
 </div>
+```
