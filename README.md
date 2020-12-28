@@ -18,15 +18,12 @@ This widget displays the next upcoming three Trail Blazers games.
 
 ### Image Examples
 
-<p float="left">
-  <div float="left">
-  Away game on gameday
-  <img src="/styles/img/gameDay_Away.png" width="30%" />
-  </div>
-  <img src="/styles/img/futureGame_Home.png" width="30%" /> 
-  <img src="/styles/img/futureGame_Away.png" width="30%" />
-</p>
+| Gameday Away                                           | Future Away Game                                          | Future Home Game                                          |
+| ------------------------------------------------------ | --------------------------------------------------------- | --------------------------------------------------------- |
+| <img src="/styles/img/gameDay_Away.png" width="30%" /> | <img src="/styles/img/futureGame_Home.png" width="30%" /> | <img src="/styles/img/futureGame_Away.png" width="30%" /> |
+
 <p float="center">
+In context to full site
   <img src="/styles/img/desktop_context.png" width="100%" />
 </p>
 
