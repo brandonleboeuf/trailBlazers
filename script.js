@@ -7,7 +7,6 @@ async function getJSON() {
 
   // destructors gscd out of initial JSON response object
   let { gscd } = data;
-  console.log(gscd);
 
   // gets current date and reformats it
   let now = new Date();
@@ -28,6 +27,8 @@ async function getJSON() {
   let gameDay = new Date(futureGames[0].htm);
   let nextGame_1 = new Date(futureGames[1].htm);
   let nextGame_2 = new Date(futureGames[2].htm);
+  console.log('nextGame:', nextGame_1);
+  console.log('futureGames', futureGames);
 
   const options = {
     weekday: 'long',
@@ -192,7 +193,7 @@ async function getJSON() {
         <p>${homeTeam[2].toUpperCase()}</p>
       </div>
     </td>
-    <td class="table-time-slot"> ${nextGame_2.toTimeString([], {
+    <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
       timeStyle: 'short',
     })}</td>
     <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
