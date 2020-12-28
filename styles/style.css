@@ -52,7 +52,7 @@ body {
 
 main {
   max-width: 400px;
-  margin: 20px auto;
+  margin: 0 auto;
   max-height: fit-content;
   background-color: white;
   background: #ffffff;
@@ -145,7 +145,6 @@ h1,
 .ctaBtn:hover {
   cursor: pointer;
   background-color: #a50000;
-  /* box-shadow: 2px 5px 4px rgba(167, 165, 165, 0.4); */
 }
 
 table {
@@ -189,7 +188,10 @@ tr {
 }
 
 .table_matchup_div > p {
-  margin: 0 6px;
+  margin: 0 7px 0 0;
+}
+.table_matchup_div > p:last-of-type {
+  margin: 0 0 0 6px;
 }
 
 .matchup-header,

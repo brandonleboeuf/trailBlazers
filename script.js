@@ -8,8 +8,7 @@ const removeDashAndChar = /[^a-zA-Z0-9 ]/g;
 
 const formatTime = (time) =>
   time.toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
+    timeStyle: 'short',
   });
 
 // adds ordinal (st, nd, rd, th) to day
