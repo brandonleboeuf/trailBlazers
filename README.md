@@ -34,7 +34,13 @@ npx serve
 
 ## Implementation
 
-To implement, add this code just above the <div class="panel-pane pane-custom pane-2"> on the right rail on https://www.nba.com/blazers/forward-center
+To implement, add this code just above
+
+```
+<div class="panel-pane pane-custom pane-2">
+```
+
+on the right rail of [blazers/forward-center](https://www.nba.com/blazers/forward-center)
 
 ```
 <div class="panel-pane pane-custom pane-1">
