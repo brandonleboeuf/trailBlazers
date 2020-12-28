@@ -39,7 +39,9 @@ async function getJSON() {
     hour12: true,
     timeZone: 'America/Los_Angeles',
   };
-  let tester = new Intl.DateTimeFormat('en-US', timeOptions).format(nextGame_2);
+
+  let timeConverter = (time) =>
+    new Intl.DateTimeFormat('en-US', timeOptions).format(time);
 
   // adds ordinal (st, nd, rd, th) to day
   function dateOrdinal(date) {
@@ -118,9 +120,9 @@ async function getJSON() {
     <p class="date">
      ${
        GAMEDAY
-         ? `<strong>TODAY</strong> / ${gameDay.toLocaleTimeString([], {
-             timeStyle: 'short',
-           })} @ ${futureGames[0].an}`
+         ? `<strong>TODAY</strong> / ${timeConverter(gameDay)} @ ${
+             futureGames[0].an
+           }`
          : gameDayDate
      }
     </p>
@@ -177,9 +179,7 @@ async function getJSON() {
           <p>${homeTeam[1].toUpperCase()}</p>
         </div>
       </td>
-      <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
-        timeStyle: 'short',
-      })}</td>
+      <td class="table-time-slot"> ${timeConverter(nextGame_1)}</td>
       <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
       <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
     </tr>
@@ -204,7 +204,7 @@ async function getJSON() {
           <p>${homeTeam[2].toUpperCase()}</p>
         </div>
       </td>
-      <td class="table-time-slot"> ${tester}</td>
+      <td class="table-time-slot"> ${timeConverter(nextGame_2)}</td>
       <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
       <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
     </tr>
