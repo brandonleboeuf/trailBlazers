@@ -2,30 +2,27 @@
 
 <img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="80px" />
 
-This widget was built to address.
+This widget was built to allow Blazers fans to see information no the upcoming three games, their location, time, broadcast information, and rival.
 
 - [Link to Project Page](https://trailblazers.netlify.app/).
 
 ## Quick Overview
 
-This widget displays the next upcoming three Trail Blazers games.
-
 - All site data is dynamic and updates automatically to reflect the next 3 games.
-- The closest upcoming games date, time, and arena are displayed at the top of the App and will change to "TODAY" on game day.
+- The closest upcoming games date, time, arena, and location are displayed at the top of the App and will change to "TODAY" on game day.
 - Broadcast information updates with Trail Blazers tv/radio stations
 - The next two games are displayed at the bottom half of the app with Trail Blazers tv stations.
-- Both upcoming games are links to the full blazers schedule
+- Both upcoming games are clickable links to the full Blazers schedule
 
 ### Image Examples
 
-| Gameday Away                                            | Future Away Game                                          | Future Home Game                                          |
-| ------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| <img src="/styles/img/gameDay_Away.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="30%" /> | <img src="/styles/img/futureGame_Away.png" width="30%" /> |
+| Gameday Away                                            | Future Away Game                                           | Future Home Game                                           |
+| ------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| <img src="/styles/img/gameDay_Away.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
 
-<p float="center">
-In context to full site
-  <img src="/styles/img/desktop_context.png" width="100%" />
-</p>
+| In context to full site                                    |
+| ---------------------------------------------------------- |
+| <img src="/styles/img/desktop_context.png" width="100%" /> |
 
 ## Run Project
 
@@ -57,9 +54,11 @@ To implement, add this code just above the <div class="panel-pane pane-custom pa
 </div>
 ```
 
-### MISC
+### Make It Production Ready
 
 Moving this intro production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
 time-zones, as they can be notorious for complicating time conversion and daylight-savings time.
 
-I would like to make this configurable in order to increase or decrease the amount of future games that are displayed
+I would add a function to determine the start-end time of the game to change the button to say "LIVE" while the game is live
+
+I would like to make this configurable in order to increase or decrease the amount of future games that are displayed.
