@@ -6,65 +6,76 @@ async function getJSON() {
   const data = await res.json();
 
   // destructors gscd out of initial JSON response object
-  let { gscd } = data;
+  const { gscd } = data;
 
   // gets current date and reformats it
-  let now = new Date();
-  let today =
+  const now = new Date();
+  const today =
     `${now.getFullYear()}` + `${now.getMonth() + 1}` + `${now.getDate()}`;
 
+  // regex to remove unneeded characters from JSON date at gscd.g.gdte
+  const removeDashAndChar = /[^a-zA-Z0-9 ]/g;
   // creates an new array with all past games removed
-  let futureGames = gscd.g.filter(
-    (i) => i.gdte.replace(/[^a-zA-Z0-9 ]/g, '') >= today
+  const futureGames = gscd.g.filter(
+    (i) => i.gdte.replace(removeDashAndChar, '') >= today
   );
 
   // compares first game in the futureGames array with todays date
   // to determine if it is GAMEDAY
-  let GAMEDAY =
-    futureGames[0].gdte.replace(/[^a-zA-Z0-9 ]/g, '') === today ? true : false;
+  const GAMEDAY =
+    futureGames[0].gdte.replace(removeDashAndChar, '') === today ? true : false;
 
   // changes display formatting of date
-  let gameDay = new Date(futureGames[0].htm);
-  let nextGame_1 = new Date(futureGames[1].htm);
-  let nextGame_2 = new Date(futureGames[2].htm);
-  console.log('nextGame:', nextGame_1);
-  console.log('futureGames', futureGames);
+
+  const gameDay = new Date(futureGames[0].htm);
+  const nextGame_1 = new Date(futureGames[1].htm);
+  const nextGame_2 = new Date(futureGames[2].htm);
+  // console.log('nextGame:', nextGame_1);
+  // console.log('futureGames', futureGames);
+
+  timeOptions = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    timeZone: 'America/Los_Angeles',
+  };
+  let tester = new Intl.DateTimeFormat('en-US', timeOptions).format(nextGame_2);
+
+  // adds ordinal (st, nd, rd, th) to day
+  function dateOrdinal(date) {
+    return (
+      date +
+      (31 == date || 21 == date || 1 == date
+        ? 'st'
+        : 22 == date || 2 == date
+        ? 'nd'
+        : 23 == date || 3 == date
+        ? 'rd'
+        : 'th')
+    );
+  }
 
   const options = {
     weekday: 'long',
   };
 
   // formats game day date, time, and arena
-  let gameDayDate = `${gameDay.toLocaleDateString(
+  const gameDayDate = `${gameDay.toLocaleDateString(
     undefined,
     options
   )} ${dateOrdinal(gameDay.getDate())} / ${gameDay.toLocaleTimeString([], {
     timeStyle: 'short',
   })} @ ${futureGames[0].an}`;
 
-  // adds ordinal (st, nd, rd, th) to day
-  function dateOrdinal(d) {
-    return (
-      d +
-      (31 == d || 21 == d || 1 == d
-        ? 'st'
-        : 22 == d || 2 == d
-        ? 'nd'
-        : 23 == d || 3 == d
-        ? 'rd'
-        : 'th')
-    );
-  }
-
   // evaluates if it is a Blazers home or away game
   // and saves the broadcast stations in an array
 
-  function getBroadcast(num) {
+  function getBroadcast(index) {
     let radio = [];
     let tv = [];
 
-    if (futureGames[num].ac === 'Portland') {
-      futureGames[num].bd.b.forEach((element) => {
+    if (futureGames[index].ac === 'Portland') {
+      futureGames[index].bd.b.forEach((element) => {
         if (element.scope === 'home' || element.scope === 'natl') {
           if (element.type === 'tv') {
             // isolates out all TV broadcast stations for blazers when they are the HOME team
@@ -76,7 +87,7 @@ async function getJSON() {
         }
       });
     } else {
-      futureGames[num].bd.b.forEach((element) => {
+      futureGames[index].bd.b.forEach((element) => {
         if (element.scope === 'away' || element.scope === 'natl') {
           if (element.type === 'tv') {
             // isolates out all TV broadcast stations for blazers when they are the AWAY team
@@ -96,13 +107,13 @@ async function getJSON() {
 
   // sets each days broadcast stations in a new array
   // to access, gameDayBroadcast.tv or gameDayBroadcast.radio
-  let gameDayBroadcast = getBroadcast(0);
-  let nextGameBroadcast1 = getBroadcast(1);
-  let nextGameBroadcast2 = getBroadcast(2);
+  const gameDayBroadcast = getBroadcast(0);
+  const nextGameBroadcast1 = getBroadcast(1);
+  const nextGameBroadcast2 = getBroadcast(2);
 
   // renders date/time of next game
   // if it is game day, it will render "TODAY" instead of future date
-  let gameDetails = document.getElementById('gameDetails');
+  const gameDetails = document.getElementById('gameDetails');
   gameDetails.innerHTML = `
     <p class="date">
      ${
@@ -129,76 +140,74 @@ async function getJSON() {
   `;
 
   // sets home and away team variables to be used to get team logos
-  let homeTeam = [];
+  const homeTeam = [];
   futureGames.forEach((e) => homeTeam.push(e.h.ta.toLowerCase()));
-  let awayTeam = [];
+  const awayTeam = [];
   futureGames.forEach((e) => awayTeam.push(e.v.ta.toLowerCase()));
 
   // renders matchup
-  let matchup = document.getElementById('matchup');
+  const matchup = document.getElementById('matchup');
   matchup.innerHTML = `
-  <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${awayTeam[0]}.gif" alt="" style="width: 80px;"/>
-  <p> @ </p>
-  <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${homeTeam[0]}.gif" alt="" style="width: 80px;"/>
+    <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${awayTeam[0]}.gif" alt="" style="width: 80px;"/>
+    <p> @ </p>
+    <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${homeTeam[0]}.gif" alt="" style="width: 80px;"/>
   `;
 
   // renders table
-  let table = document.getElementById('upcomingGames');
+  const table = document.getElementById('upcomingGames');
   table.innerHTML = `
-  <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" onkeydown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
-    <td class="matchup-header">
-      <div class="table_matchup_div">
-        <img
-          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-            awayTeam[1]
-          }.gif"
-          alt="${futureGames[1].v.tn} team logo"
-          style="width: 26px"
-        />
-        <p>${awayTeam[1].toUpperCase()} @</p>
-        <img
-          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-            homeTeam[1]
-          }.gif"
-          alt="${futureGames[1].h.tn} team logo"
-          style="width: 26px"
-        />
-        <p>${homeTeam[1].toUpperCase()}</p>
-      </div>
-    </td>
-    <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
-      timeStyle: 'short',
-    })}</td>
-    <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
-    <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
-  </tr>
-  <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
-    <td class="matchup-header">
-      <div class="table_matchup_div">
-        <img
-          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-            awayTeam[2]
-          }.gif"
-          alt="${futureGames[2].v.tn} team logo"
-          style="width: 26px"
-        />
-        <p>${awayTeam[2].toUpperCase()} @</p>
-        <img
-          src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
-            homeTeam[2]
-          }.gif"
-          alt="${futureGames[2].h.tn} team logo"
-          style="width: 26px"
-        />
-        <p>${homeTeam[2].toUpperCase()}</p>
-      </div>
-    </td>
-    <td class="table-time-slot"> ${nextGame_2.toLocaleTimeString([], {
-      timeStyle: 'short',
-    })}</td>
-    <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
-    <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
-  </tr>
+    <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" onkeydown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
+      <td class="matchup-header">
+        <div class="table_matchup_div">
+          <img
+            src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+              awayTeam[1]
+            }.gif"
+            alt="${futureGames[1].v.tn} team logo"
+            style="width: 26px"
+          />
+          <p>${awayTeam[1].toUpperCase()} @</p>
+          <img
+            src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+              homeTeam[1]
+            }.gif"
+            alt="${futureGames[1].h.tn} team logo"
+            style="width: 26px"
+          />
+          <p>${homeTeam[1].toUpperCase()}</p>
+        </div>
+      </td>
+      <td class="table-time-slot"> ${nextGame_1.toLocaleTimeString([], {
+        timeStyle: 'short',
+      })}</td>
+      <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
+      <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
+    </tr>
+    <tr onpointerdown="window.location='https://www.nba.com/blazers/schedule'" tabindex="0" aria-role="link" class="clickable">
+      <td class="matchup-header">
+        <div class="table_matchup_div">
+          <img
+            src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+              awayTeam[2]
+            }.gif"
+            alt="${futureGames[2].v.tn} team logo"
+            style="width: 26px"
+          />
+          <p>${awayTeam[2].toUpperCase()} @</p>
+          <img
+            src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/${
+              homeTeam[2]
+            }.gif"
+            alt="${futureGames[2].h.tn} team logo"
+            style="width: 26px"
+          />
+          <p>${homeTeam[2].toUpperCase()}</p>
+        </div>
+      </td>
+      <td class="table-time-slot"> ${tester}</td>
+      <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
+      <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
+    </tr>
   `;
 }
 
