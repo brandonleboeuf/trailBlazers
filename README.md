@@ -1,6 +1,6 @@
 # Trail Blazers Widget
 
-<img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="100%" />
+<img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="80px" />
 
 This widget was built to address.
 
@@ -19,10 +19,10 @@ This widget displays the next upcoming three Trail Blazers games.
 ### Image Examples
 
 <p float="left">
-  <img src="/styles/img/gameDay_Away.png" width="100" />
-  <img src="/styles/img/futureGame_Home.png" width="100" /> 
-  <img src="/styles/img/futureGame_Away.png" width="100" />
-  <img src="/styles/img/desktop_context.png" width="100" />
+  <img src="/styles/img/gameDay_Away.png" width="50%" />
+  <img src="/styles/img/futureGame_Home.png" width="50%" /> 
+  <img src="/styles/img/futureGame_Away.png" width="50%" />
+  <img src="/styles/img/desktop_context.png" width="50%" />
 </p>
 
 ## Run Project
