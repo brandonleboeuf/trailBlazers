@@ -166,7 +166,7 @@ async function getJSON() {
       timeStyle: 'short',
     })}</td>
     <td>${`${nextGame_1.getMonth() + 1}/${nextGame_1.getDate()}`}</td>
-    <td>${nextGameBroadcast1.tv[0].disp}</td>
+    <td class="padding_right">${nextGameBroadcast1.tv[0].disp}</td>
   </tr>
   <tr>
     <td class="matchup-header">
@@ -193,7 +193,7 @@ async function getJSON() {
       timeStyle: 'short',
     })}</td>
     <td>${`${nextGame_2.getMonth() + 1}/${nextGame_2.getDate()}`}</td>
-    <td>${nextGameBroadcast2.tv[0].disp}</td>
+    <td class="padding_right">${nextGameBroadcast2.tv[0].disp}</td>
   </tr>
   `;
 }

@@ -51,6 +51,8 @@ body {
 }
 
 main {
+  max-width: 400px;
+  margin: 20px auto;
   max-height: fit-content;
   background-color: white;
   background: #ffffff;
@@ -210,6 +212,10 @@ tr {
 
 .table-time-slot {
   padding-left: 25px !important;
+}
+
+.padding_right {
+  padding-right: 12px;
 }
 
 @media (max-width: 350px) {
