@@ -35,6 +35,7 @@ npx serve
 
 To implement, add the below code just above 'div class="panel-pane pane-custom pane-2"'
 on the right rail of the [blazers/forward-center](https://www.nba.com/blazers/forward-center) page.
+Set the iframe height to 485.
 
 ```
 <div class="panel-pane pane-custom pane-1">

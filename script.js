@@ -6,10 +6,19 @@ const API_URL = `https://data.nba.com/data/v2015/json/mobile_teams/nba/2020/team
 // regex to remove unneeded characters from JSON date at gscd.g.gdte
 const removeDashAndChar = /[^a-zA-Z0-9 ]/g;
 
-const formatTime = (time) =>
-  time.toLocaleTimeString('en-US', {
-    timeStyle: 'short',
-  });
+const formatTime = (time) => {
+  options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    timeZone: 'America/Los_Angeles',
+  };
+  return new Intl.DateTimeFormat('en-US', options).format(time);
+
+  // time.toLocaleTimeString('en-US', {
+  //   timeStyle: 'short',
+  // });
+};
 
 // adds ordinal (st, nd, rd, th) to day
 const dateOrdinal = (date) => {
