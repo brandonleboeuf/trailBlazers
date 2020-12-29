@@ -57,8 +57,6 @@ on the right rail of the [blazers/forward-center](https://www.nba.com/blazers/fo
 ### Making It Production Ready
 
 Moving this intro production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
-time-zones, as they can be notorious for complicating time conversion and daylight-savings time.
-
-I would add a function to determine the start-end time of the game to change the button to say "LIVE" while the game is live.
+time-zones, as time-zone differences are notorious for complicating time conversion as well as accounting for daylight-savings time.
 
 I would like to make this configurable in order to increase or decrease the amount of future games that are displayed.
