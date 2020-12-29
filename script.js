@@ -42,8 +42,14 @@ async function main() {
 
   // gets current date and reformats it
   const now = new Date();
+
+  // this turns the date into 4-digit year, 2-digit month and 2-digit day to compare
+  // against future game days
+  // if the day/month is a single digit, a 0 is added before
   const today =
-    `${now.getFullYear()}` + `${now.getMonth() + 1}` + `${now.getDate()}`;
+    `${now.getFullYear()}` +
+    `${now.getMonth() >= 10 ? now.getMonth() + 1 : `0${now.getMonth() + 1}`}` +
+    `${now.getDate() >= 10 ? now.getDate() : `0${now.getDate()}`}`;
 
   // creates an new array with all past games removed
   const futureGames = gscd.g.filter(
@@ -78,7 +84,7 @@ async function main() {
 
   // formats game day date, time, and arena
   const gameDayDate = `${gameDay.toLocaleString(undefined, {
-    weekday: 'long',
+    weekday: 'short',
   })}, ${gameDay.toLocaleString(undefined, {
     month: 'short',
   })} ${dateOrdinal(gameDay.getDate())} / ${formatTime(gameDay)} @ ${
