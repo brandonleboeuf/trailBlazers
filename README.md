@@ -5,7 +5,8 @@
 This widget was built to allow Blazers fans to see information no the upcoming three games, their location, time, broadcast information, and rival.
 
 [Link to Project Page](https://trailblazers.netlify.app/)
-![Project Image](/styles/img/futureGame_Home.pn)
+
+![Image of Project](https://raw.githubusercontent.com/brandonleboeuf/trailBlazers/main/styles/img/futureGame_Home.png)
 
 ## Quick Overview
 
