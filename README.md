@@ -2,7 +2,7 @@
 
 <img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="80px" />
 
-This widget was built to allow Blazers fans to see information no the upcoming three games, their location, time, broadcast information, and rival.
+This widget was built to allow Blazers fans to see information on upcoming Blazer games.
 
 [Link to Project Page](https://trailblazers.netlify.app/)
 
@@ -11,10 +11,10 @@ This widget was built to allow Blazers fans to see information no the upcoming t
 ## Quick Overview
 
 - All site data is dynamic and updates automatically to reflect the next 3 games.
-- The closest upcoming games date, time, arena, and location are displayed at the top of the App and will change to "TODAY" on game day.
-- Broadcast information updates with Trail Blazers tv/radio stations
-- The next two games are displayed at the bottom half of the app with Trail Blazers tv stations.
-- Both upcoming games are clickable links to the full Blazers schedule
+- Date, time, arena, and location of soonest game is displayed at the top of the App and will change to "TODAY" on game day.
+- Broadcast information updates with Trail Blazers tv/radio stations.
+- The later two upcoming games are also links to the [Schedule Page](https://www.nba.com/blazers/schedule).
+- Both upcoming games are clickable links to the full Blazers schedule.
 
 ### Image Examples
 
