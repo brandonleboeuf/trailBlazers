@@ -125,9 +125,9 @@ async function main() {
     <p class="date">
      ${
        GAMEDAY
-         ? `<p class="gameday">TODAY</p> <br /> ${formatTime(gameDay)} @ ${
-             futureGames[0].an
-           }`
+         ? `<span class="gameday">TODAY</span> <br /> ${formatTime(
+             gameDay
+           )} @ ${futureGames[0].an}`
          : gameDayDate
      }
     </p>

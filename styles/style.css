@@ -241,9 +241,10 @@ tr {
 }
 .gameday {
   font-size: 2rem;
-  font-family: UnitedSansCdBd;
+  display: block;
   color: #cc0000;
-  font-kerning: unset;
+  /* margin-bottom: 5px; */
+
   /* padding: 5px 0; */
 }
 
