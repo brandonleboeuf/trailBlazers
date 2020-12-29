@@ -6,7 +6,7 @@ This widget was built to allow Blazers fans to see information no the upcoming t
 
 [Link to Project Page](https://trailblazers.netlify.app/)
 
-![Image of Project](https://raw.githubusercontent.com/brandonleboeuf/trailBlazers/main/styles/img/futureGame_Home.png)
+<img src="/styles/img/futureGame_Away.png" width="50%" />
 
 ## Quick Overview
 
