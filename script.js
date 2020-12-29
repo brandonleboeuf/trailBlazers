@@ -77,9 +77,10 @@ async function main() {
       : new Date(futureGames[2].vtm);
 
   // formats game day date, time, and arena
-  const gameDayDate = `${gameDay.toLocaleDateString(undefined, {
+  const gameDayDate = `${gameDay.toLocaleString(undefined, {
+    weekday: 'long',
+  })}, ${gameDay.toLocaleString(undefined, {
     month: 'short',
-    weekday: 'short',
   })} ${dateOrdinal(gameDay.getDate())} / ${formatTime(gameDay)} @ ${
     futureGames[0].an
   }`;
