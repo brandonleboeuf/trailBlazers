@@ -7,17 +7,17 @@ const API_URL = `https://data.nba.com/data/v2015/json/mobile_teams/nba/2020/team
 const removeDashAndChar = /[^a-zA-Z0-9 ]/g;
 
 const formatTime = (time) => {
-  // options = {
-  //   hour: 'numeric',
-  //   minute: 'numeric',
-  //   hour12: true,
-  //   timeZone: 'America/Los_Angeles',
-  // };
-  // return new Intl.DateTimeFormat('en-US', options).format(time);
+  options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    // timeZone: 'America/Los_Angeles',
+  };
+  return new Intl.DateTimeFormat('en-US', options).format(time);
 
-  return time.toLocaleTimeString('en-US', {
-    timeStyle: 'short',
-  });
+  // return time.toLocaleTimeString('en-US', {
+  //   timeStyle: 'short',
+  // });
 };
 
 // adds ordinal (st, nd, rd, th) to day
