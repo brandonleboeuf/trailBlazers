@@ -3,9 +3,9 @@
 <img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="80px" />
 
 This widget was built to allow Blazers fans to see information no the upcoming three games, their location, time, broadcast information, and rival.
-<img src="/styles/img/GameDay.png" width="20%" float="right/>
 
-- [Link to Project Page](https://trailblazers.netlify.app/).
+[Link to Project Page](https://trailblazers.netlify.app/).
+| <img src="/styles/img/GameDay.png" width="20%" /> |
 
 ## Quick Overview
 
