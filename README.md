@@ -34,12 +34,7 @@ npx serve
 
 ## Implementation
 
-To implement, add this code just above
-
-```
-<div class="panel-pane pane-custom pane-2">
-```
-
+To implement, add the below code just above 'div class="panel-pane pane-custom pane-2"'
 on the right rail of [blazers/forward-center](https://www.nba.com/blazers/forward-center)
 
 ```
@@ -65,6 +60,6 @@ on the right rail of [blazers/forward-center](https://www.nba.com/blazers/forwar
 Moving this intro production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
 time-zones, as they can be notorious for complicating time conversion and daylight-savings time.
 
-I would add a function to determine the start-end time of the game to change the button to say "LIVE" while the game is live
+I would add a function to determine the start-end time of the game to change the button to say "LIVE" while the game is live.
 
 I would like to make this configurable in order to increase or decrease the amount of future games that are displayed.
