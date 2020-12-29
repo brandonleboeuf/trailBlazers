@@ -4,7 +4,7 @@ This widget was built to allow Blazers fans to see information on upcoming Blaze
 
 [Link to Project Page](https://trailblazers.netlify.app/)
 
-<img float+"center" src="/styles/img/futureGame_Away.png" width="50%" />
+<img float="center" src="/styles/img/futureGame_Away.png" width="50%" />
 
 ## Overview
 
