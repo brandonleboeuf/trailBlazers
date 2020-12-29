@@ -79,9 +79,9 @@ async function main() {
   // formats game day date, time, and arena
   const gameDayDate = `${gameDay.toLocaleDateString(undefined, {
     weekday: 'long',
-  })} ${dateOrdinal(gameDay.getDate())} / ${gameDay.toLocaleTimeString([], {
-    timeStyle: 'short',
-  })} @ ${futureGames[0].an}`;
+  })} ${dateOrdinal(gameDay.getDate())} / ${formatTime(gameDay)} @ ${
+    futureGames[0].an
+  }`;
 
   // evaluates if it is a Blazers home or away game
   // and saves the broadcast stations in an array
