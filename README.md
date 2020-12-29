@@ -1,19 +1,21 @@
 # Trail Blazers Widget
 
-This widget was built to allow Blazers fans to see information on upcoming Blazer games.
+This widget allows Blazers fans to see information on the next three Trail Blazer games.
 
 [Link to Project Page](https://trailblazers.netlify.app/)
 
-<img float="center" src="/styles/img/futureGame_Away.png" width="50%" />
+<p align="center">
+  <img src="/styles/img/futureGame_Away.png" width="50%" />
+</p>
 
 ## Overview
 
-- All site data is dynamic and updates automatically to reflect the next 3 games.
-- Date, time, arena, and location of next game is displayed at the top of the App and will change to "TODAY" on game day.
+- All site data is dynamic and will update automatically to reflect the next 3 games.
+- Date, time, arena, and location of closest game is displayed at the top of the App and will change to "TODAY" on game day.
 - Broadcast information updates with Trail Blazers tv/radio stations.
 - The later two upcoming games are also links to the [Schedule Page](https://www.nba.com/blazers/schedule).
 
-### State Examples
+### Widget State Examples
 
 | Gameday Away                                       | Future Away Game                                           | Future Hom Game                                            |
 | -------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
@@ -25,7 +27,7 @@ This widget was built to allow Blazers fans to see information on upcoming Blaze
 
 ## Run Project
 
-To get project running locally, simply clone this project, cd into the root and type the below command into the terminal:
+To get the project running locally, simply clone this repo, cd into the root folder and type the below command into the terminal:
 
 ```sh
 npx serve
@@ -35,7 +37,7 @@ npx serve
 
 To implement, add the below code just above 'div class="panel-pane pane-custom pane-2"'
 on the right rail of the [blazers/forward-center](https://www.nba.com/blazers/forward-center) page.
-Set the iframe height to 485.
+Makes sure to set the iframe height to 485.
 
 ```
 <div class="panel-pane pane-custom pane-1">
@@ -57,7 +59,7 @@ Set the iframe height to 485.
 
 ### Making It Production Ready
 
-Moving this intro production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
+Moving this into production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
 time-zones, as time-zone differences are notorious for complicating time conversion as well as accounting for daylight-savings time.
 
-I would like to make this configurable in order to increase or decrease the amount of future games that are displayed.
+I would make the amount of upcoming games be configurable to allow the user to set the number of games being displayed.
