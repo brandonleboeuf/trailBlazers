@@ -1,12 +1,10 @@
 # Trail Blazers Widget
 
-<img alt="Logo" align="right" src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/por.gif" width="80px" />
-
 This widget was built to allow Blazers fans to see information on upcoming Blazer games.
 
 [Link to Project Page](https://trailblazers.netlify.app/)
 
-<img src="/styles/img/futureGame_Away.png" width="50%" />
+<img float+"center" src="/styles/img/futureGame_Away.png" width="50%" />
 
 ## Overview
 
