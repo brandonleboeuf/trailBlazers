@@ -8,27 +8,26 @@ This widget was built to allow Blazers fans to see information on upcoming Blaze
 
 <img src="/styles/img/futureGame_Away.png" width="50%" />
 
-## Quick Overview
+## Overview
 
 - All site data is dynamic and updates automatically to reflect the next 3 games.
 - Date, time, arena, and location of soonest game is displayed at the top of the App and will change to "TODAY" on game day.
 - Broadcast information updates with Trail Blazers tv/radio stations.
 - The later two upcoming games are also links to the [Schedule Page](https://www.nba.com/blazers/schedule).
-- Both upcoming games are clickable links to the full Blazers schedule.
 
-### Image Examples
+### State Examples
 
 | Gameday Away                                       | Future Away Game                                           | Future Hom Game                                            |
 | -------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
 | <img src="/styles/img/GameDay.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
 
-| In context to full site                                    |
+| Desktop Context                                            |
 | ---------------------------------------------------------- |
 | <img src="/styles/img/desktop_context.png" width="100%" /> |
 
 ## Run Project
 
-No installations needed to get project running locally.
+To get project running locally, simply clone this project, cd into the root and type the below command into the terminal:
 
 ```sh
 npx serve
@@ -37,7 +36,7 @@ npx serve
 ## Implementation
 
 To implement, add the below code just above 'div class="panel-pane pane-custom pane-2"'
-on the right rail of [blazers/forward-center](https://www.nba.com/blazers/forward-center)
+on the right rail of the [blazers/forward-center](https://www.nba.com/blazers/forward-center) page.
 
 ```
 <div class="panel-pane pane-custom pane-1">
@@ -57,7 +56,7 @@ on the right rail of [blazers/forward-center](https://www.nba.com/blazers/forwar
 </div>
 ```
 
-### Make It Production Ready
+### Making It Production Ready
 
 Moving this intro production, I would incorporate [Moment.js](https://momentjs.com/) or [date.fns](https://date-fns.org/) to handle
 time-zones, as they can be notorious for complicating time conversion and daylight-savings time.
