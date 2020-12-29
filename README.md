@@ -16,9 +16,9 @@ This widget was built to allow Blazers fans to see information no the upcoming t
 
 ### Image Examples
 
-| Gameday Away                                            | Future Away Game                                           | Future Home Game                                           |
-| ------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| <img src="/styles/img/gameDay_Away.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
+| Gameday Away                                       | Future Away Game                                           | Future Hom Game                                            |
+| -------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| <img src="/styles/img/GameDay.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
 
 | In context to full site                                    |
 | ---------------------------------------------------------- |

@@ -45,6 +45,9 @@ async function main() {
   // to determine if it is GAMEDAY
   const GAMEDAY = futureGames[0].gdte.replace(removeDashAndChar, '') === today;
 
+  if (GAMEDAY) {
+    document.getElementById('nextGame').classList.add('gamedaySmall');
+  }
   // changes display formatting of date and ensures that PST time
   // is always displayed
 
@@ -122,7 +125,7 @@ async function main() {
     <p class="date">
      ${
        GAMEDAY
-         ? `<strong>TODAY</strong> / ${formatTime(gameDay)} @ ${
+         ? `<p class="gameday">TODAY</p> <br /> ${formatTime(gameDay)} @ ${
              futureGames[0].an
            }`
          : gameDayDate

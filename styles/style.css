@@ -239,3 +239,14 @@ tr {
   text-decoration: none;
   outline: none;
 }
+.gameday {
+  font-size: 2rem;
+  font-family: UnitedSansCdBd;
+  color: #cc0000;
+  font-kerning: unset;
+  /* padding: 5px 0; */
+}
+
+.gamedaySmall {
+  font-size: 1rem;
+}
