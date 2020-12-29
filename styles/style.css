@@ -142,9 +142,17 @@ h1,
   transition: all 0.2s linear;
 } */
 
-.ctaBtn:hover {
+.ctaBtn:hover,
+.btn-primary:active:hover {
   cursor: pointer;
   background-color: #a50000;
+}
+
+.ctaBtn:active,
+.ctaBtn:focus,
+.btn-primary:active:focus {
+  border-color: #a50000;
+  background-color: #e3e3e3;
 }
 
 table {
