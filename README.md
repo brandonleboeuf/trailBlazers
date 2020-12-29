@@ -17,9 +17,9 @@ This widget allows Blazers fans to see information on the next three Trail Blaze
 
 ### Widget State Examples
 
-| Gameday Away                                       | Future Home Game                                           | Future Away Game                                           |
-| -------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| <img src="/styles/img/GameDay.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
+| Gameday Away                                        | Future Home Game                                           | Future Away Game                                           |
+| --------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| <img src="/styles/img/game_Day.png" width="100%" /> | <img src="/styles/img/futureGame_Home.png" width="100%" /> | <img src="/styles/img/futureGame_Away.png" width="100%" /> |
 
 | Desktop Context                                            |
 | ---------------------------------------------------------- |
