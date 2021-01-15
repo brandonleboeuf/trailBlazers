@@ -120,27 +120,9 @@ h1,
   margin: 30px auto 40px auto;
   background: #cc0000;
   border: none;
-  /* box-shadow: 1px 4px 4px rgba(167, 165, 165, 0.2); */
   outline: none;
   transition: all 0.2s linear;
 }
-
-/* rounded button */
-/* .ctaBtn {
-  width: 130px;
-  height: 36px;
-  color: #fffdfd;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 1em;
-  margin: 30px auto 40px auto;
-  background: #cc0000;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 1px 4px 4px rgba(128, 128, 128, 0.2);
-  outline: none;
-  transition: all 0.2s linear;
-} */
 
 .ctaBtn:hover,
 .btn-primary:active:hover {
@@ -251,9 +233,6 @@ tr {
   font-size: 2rem;
   display: block;
   color: #cc0000;
-  /* margin-bottom: 5px; */
-
-  /* padding: 5px 0; */
 }
 
 .gamedaySmall {
