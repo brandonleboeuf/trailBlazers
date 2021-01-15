@@ -11,13 +11,8 @@ const formatTime = (time) => {
     hour: 'numeric',
     minute: 'numeric',
     hour12: true,
-    // timeZone: 'America/Los_Angeles',
   };
   return new Intl.DateTimeFormat('en-US', options).format(time);
-
-  // return time.toLocaleTimeString('en-US', {
-  //   timeStyle: 'short',
-  // });
 };
 
 // adds ordinal (st, nd, rd, th) to day
@@ -63,9 +58,9 @@ async function main() {
   if (GAMEDAY) {
     document.getElementById('nextGame').classList.add('gamedaySmall');
   }
+
   // changes display formatting of date and ensures that PST time
   // is always displayed
-
   const gameDay =
     // checks to see if the game is being played in Portland
     futureGames[0].ac === 'Portland'
@@ -93,7 +88,6 @@ async function main() {
 
   // evaluates if it is a Blazers home or away game
   // and saves the broadcast stations in an array
-
   const getBroadcast = (index) => {
     let radio = [];
     let tv = [];
