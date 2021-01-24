@@ -217,14 +217,14 @@ tr {
     padding-left: 5px !important;
   }
 }
-@media (min-width: 900px) {
+/* @media (min-width: 900px) {
   main {
     margin: 50px auto;
     max-width: fit-content;
     font-size: 20px;
     padding: 0 10px;
   }
-}
+} */
 
 .clickable:hover {
   cursor: pointer;
