@@ -11,9 +11,9 @@ This widget allows Blazers fans to see information on the next three Trail Blaze
 ## Overview
 
 - All site data is dynamic and will update automatically to reflect the next 3 games.
-- Date, time, arena, and location of closest game is displayed at the top of the App and will change to "TODAY" on game day.
+- Date, time, arena, and location of closest game are displayed at the top of the App and the date will change to "TODAY" on game day.
 - Broadcast information updates with Trail Blazers tv/radio stations.
-- The later two upcoming games are also links to the [Schedule Page](https://www.nba.com/blazers/schedule).
+- The later two upcoming games are also links to the official [Trail Blazers NBA schedule page](https://www.nba.com/blazers/schedule).
 
 ### Widget State Examples
 
