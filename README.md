@@ -49,7 +49,7 @@ Makes sure to set the iframe height to 485.
         width="100%"
         height="550px"
         frameborder="0"
-        scrolling="no"
+        scrolling="yes"
         title="Rip City NEXT_GAME"
       ></iframe>
     </div>
