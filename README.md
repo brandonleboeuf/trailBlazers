@@ -47,7 +47,7 @@ Makes sure to set the iframe height to 485.
         id="nextGame_iframe"
         src="https://trailblazers.netlify.app/"
         width="100%"
-        height="485"
+        height="550px"
         frameborder="0"
         scrolling="no"
         title="Rip City NEXT_GAME"
