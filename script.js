@@ -1,4 +1,4 @@
-const API_URL = `https://data.nba.com/data/v2015/json/mobile_teams/nba/2020/teams/trail_blazers_schedule_02.json`;
+const API_URL = `https://data.nba.com/data/v2015/json/mobile_teams/nba/2021/teams/trail_blazers_schedule_02.json`;
 
 // Utils
 // ===========================
@@ -45,7 +45,7 @@ async function main() {
     `${now.getFullYear()}` +
     `${now.getMonth() >= 10 ? now.getMonth() + 1 : `0${now.getMonth() + 1}`}` +
     `${now.getDate() >= 10 ? now.getDate() : `0${now.getDate()}`}`;
-
+  console.log({ today });
   // creates an new array with all past games removed
   const futureGames = gscd.g.filter(
     (item) => item.gdte.replace(removeDashAndChar, '') >= today
